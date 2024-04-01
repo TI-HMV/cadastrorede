@@ -57,13 +57,48 @@ Esta tabela armazena os dados dos usuários cadastrados no sistema.
 
 ### `index.php`
 
-Este arquivo é a página inicial do sistema. Ele contém a interface de login e cadastro, bem como a lógica para exibir mensagens de sucesso ou erro após o envio dos formulários.
+Esta página é a tela de login do sistema.
 
-#### Funções JavaScript:
+#### Funcionalidades:
 
-1. **`abrirModal()`**: Esta função é chamada quando o formulário de cadastro é submetido. Ela abre um modal que exibe os termos de uso do WiFi e solicita o consentimento do usuário para o tratamento de seus dados pessoais. Além disso, verifica se o usuário já está no final do conteúdo do modal e habilita o botão "Aceitar" apenas se estiver no final.
+1. **Login de Usuário**: Permite que os usuários se autentiquem no sistema fornecendo sua matrícula e senha.
 
-2. **`aceitarTermos()`**: Esta função é chamada quando o usuário aceita os termos de uso do WiFi no modal. Ela obtém os valores dos campos do formulário de cadastro (nome, matrícula e senha), constrói uma URL com esses valores e redireciona o usuário para o arquivo `Cuser.php` com os parâmetros necessários na URL.
+2. **Cadastro de Novo Usuário**: Permite que novos usuários se cadastrem no sistema fornecendo sua matrícula, senha e nome completo.
+
+3. **Exibição de Mensagens**: Exibe mensagens de sucesso ou erro após ações como login ou cadastro.
+
+#### Estilos CSS Incorporados:
+
+1. Define o estilo visual da página, incluindo cores, fontes e layout.
+
+2. Usa gradientes de cores para fundos e sombras para elementos como caixas de login.
+
+#### Scripts JavaScript Incorporados:
+
+1. `abrirModal()`: Abre um modal com a política de uso do WiFi e solicitação de consentimento para tratamento de dados.
+
+2. `aceitarTermos()`: Aceita os termos da política de uso do WiFi e redireciona para o script `Cuser.php` para cadastro do novo usuário.
+
+#### Modal de Política de Uso do WiFi:
+
+1. Apresenta os termos de uso do WiFi e solicita consentimento para tratamento de dados pessoais.
+
+2. Contém um botão "Aceitar" que fica habilitado somente quando o usuário rola até o final do conteúdo do modal.
+
+#### Bibliotecas Externas:
+
+1. jQuery (ajax.googleapis.com): Biblioteca JavaScript para manipulação do DOM e interações assíncronas.
+
+2. Bootstrap (stackpath.bootstrapcdn.com): Framework CSS para estilização de elementos HTML e responsividade.
+
+#### Observações:
+
+- A página solicita matrícula e senha para o login.
+  
+- Para o cadastro de novo usuário, são solicitados nome completo, matrícula, senha e confirmação de senha.
+
+- Os campos são marcados como obrigatórios (`required`) para garantir o preenchimento adequado.
+
 
 ### `Clogin.php`
 
