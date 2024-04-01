@@ -49,7 +49,7 @@ Esta tabela armazena os dados dos usuários cadastrados no sistema.
 
 | Campo     | Tipo       | Descrição                                   |
 | --------- | ---------- | ------------------------------------------- |
-| `Matricula` | VARCHAR(20) | Chave primária. Matrícula do usuário.    |
+| `Matricula` | INT(20) | Chave primária. Matrícula do usuário.    |
 | `Senha`     | VARCHAR(250)| Senha do usuário (hash).                  |
 | `Nome`      | VARCHAR(450)| Nome completo do usuário.                 |
 
