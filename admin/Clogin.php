@@ -20,9 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario']) && isset($_
 
         // Verificar se a senha fornecida corresponde ao hash
         if (password_verify($senha, $senhaHash)) {
-            // Senha correta, iniciar sessão ou redirecionar para a página de sucesso
+            // Senha correta, iniciar sessão e armazenar o nome do usuário na sessão
             session_start();
             $_SESSION['matricula'] = $matricula;
+            $_SESSION['nome'] = $row['Nome']; // Armazenar o nome do usuário na sessão
             header("Location: home.php");
             exit();
         } else {

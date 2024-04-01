@@ -2,6 +2,12 @@
 
 include "../config/config.php";
 
+if (!isset($_SESSION['matricula'])) {
+    // Usuário não está logado, redirecionar para a página de login
+    header("Location: index.php");
+    exit(); // Certifique-se de sair após redirecionar
+}
+
 if (isset($_GET['mensagem'])) {
     $mensagem = $_GET['mensagem'];
     unset($_SESSION['mensagem']);
