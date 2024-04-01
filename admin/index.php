@@ -80,14 +80,14 @@
                     <div class="card-body">
                         <?php
                         // Exibir mensagem de erro, se houver
-                        if (isset($_GET['erro'])) {
-                            $erro = $_GET['erro'];
+                        if (isset($_GET['error'])) {
+                            $erro = $_GET['error'];
                             echo '<div class="alert alert-danger" role="alert">' . $erro . '</div>';
                         }
                         ?>
                         <form action="Clogin.php" method="post">
                             <div class="form-group">
-                                <label for="username">Usuário:</label>
+                                <label for="usuario">Usuário:</label>
                                 <input type="text" class="form-control" id="usuario" name="usuario" required>
                             </div>
                             <div class="form-group">

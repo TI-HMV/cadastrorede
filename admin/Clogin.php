@@ -3,13 +3,13 @@
 include '../config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario']) && isset($_POST['senha'])) {
-    $matricula = $_POST['usuario'];
+    $nome = $_POST['usuario'];
     $senha = $_POST['senha'];
 
     // Buscar usuário pelo matrícula
-    $sql = "SELECT Nome, Senha FROM wifi WHERE Matricula = ?";
+    $sql = "SELECT Nome, Senha FROM wifi WHERE Nome = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $matricula);
+    $stmt->bind_param("s", $nome);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario']) && isset($_
         if (password_verify($senha, $senhaHash)) {
             // Senha correta, iniciar sessão e armazenar o nome do usuário na sessão
             session_start();
-            $_SESSION['matricula'] = $matricula;
             $_SESSION['nome'] = $row['Nome']; // Armazenar o nome do usuário na sessão
             header("Location: home.php");
             exit();
@@ -36,6 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario']) && isset($_
         header("Location: index.php?error=Usuário não encontrado");
         exit();
     }
+}else {
+    // Usuário não encontrado, redirecionar para a página de login com mensagem de erro
+    header("Location: index.php?error=Dados não enviados");
+    exit();
 }
 
 $conn->close();

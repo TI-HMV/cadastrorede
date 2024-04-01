@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 include "../config/config.php";
 
-if (!isset($_SESSION['matricula'])) {
+if (!isset($_SESSION['nome'])) {
     // Usuário não está logado, redirecionar para a página de login
     header("Location: index.php");
     exit(); // Certifique-se de sair após redirecionar
