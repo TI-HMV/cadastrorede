@@ -73,6 +73,118 @@ Este arquivo é responsável pelo processo de autenticação de usuários. Quand
 
 Este arquivo é responsável pelo processo de cadastro de novos usuários. Quando um usuário envia o formulário de cadastro, este arquivo verifica se a matrícula fornecida já existe no banco de dados. Se a matrícula já existir, os dados do usuário são atualizados no banco de dados. Após o cadastro ou atualização bem-sucedidos, o usuário é redirecionado de volta para a página inicial do sistema com uma mensagem de sucesso.
 
+## Arquivos de Administração
+
+### `admin/Clogin.php`
+
+Este arquivo é responsável pelo processo de autenticação de administradores. Quando um administrador envia o formulário de login, este arquivo verifica as credenciais fornecidas em relação aos dados armazenados no banco de dados. Se as credenciais forem válidas, o administrador é autorizado a acessar o painel administrativo do sistema. Caso contrário, uma mensagem de erro é exibida na página de login.
+
+
+### `admin/Cmat.php`
+
+Este arquivo é responsável pela manipulação de materiais no sistema. Ele permite que os administradores visualizem, adicionem, atualizem e removam materiais do sistema.
+
+### `admin/Cuser.php`
+
+Este arquivo é responsável pelo processo de atualização de dados de usuários no sistema. Quando um administrador envia o formulário de atualização de usuário, este arquivo verifica se já existe um usuário com a mesma matrícula no banco de dados. Se o usuário já existir, os dados do usuário são atualizados com as novas informações fornecidas (nome e senha). Após a atualização bem-sucedida, o administrador é redirecionado de volta para a página de administração do sistema com uma mensagem de sucesso. Caso contrário, uma mensagem de erro é exibida na página.
+
+
+### `admin/Duser.php`
+
+Este arquivo é responsável pelo processo de exclusão de usuários do sistema. Quando um administrador acessa este arquivo com uma matrícula específica definida na URL, a matrícula correspondente é removida do banco de dados. Após a exclusão bem-sucedida, o administrador é redirecionado de volta para a página de administração do sistema com uma mensagem de sucesso. Se ocorrer algum erro durante o processo de exclusão, uma mensagem de erro é exibida na página.
+
+
+### `admin/home.php`
+
+Esta página é o painel de controle do administrador, onde é possível visualizar e gerenciar os usuários do sistema.
+
+#### Funcionalidades Principais:
+
+1. **Listagem de Usuários**: Exibe uma tabela com as matrículas e nomes dos usuários cadastrados no sistema.
+   
+2. **Adicionar Matrículas**: Permite ao administrador adicionar novas matrículas ao sistema.
+
+3. **Editar Usuários**: Ao clicar no botão de edição ao lado de cada usuário, é possível editar suas informações.
+
+4. **Excluir Usuários**: Ao clicar no botão de exclusão ao lado de cada usuário, é possível excluí-lo do sistema.
+
+#### Estilos CSS Incorporados:
+
+1. `body`: Define o fundo da página como cinza claro.
+   
+2. `.container`: Centraliza o conteúdo da página verticalmente.
+   
+3. `.card`: Adiciona uma sombra à caixa de controle de usuários.
+   
+4. `.card-header`: Define o estilo do cabeçalho da caixa de controle de usuários.
+
+#### Scripts JavaScript do Bootstrap e jQuery:
+
+1. `jquery-3.6.0.min.js`: Fornece funcionalidades básicas do jQuery para manipulação do DOM.
+   
+2. `bootstrap.bundle.min.js`: Fornece funcionalidades avançadas do Bootstrap, como modais e dropdowns.
+
+#### Biblioteca DataTables:
+
+1. `jquery.dataTables.min.js`: Fornece funcionalidades avançadas para a tabela de listagem de usuários, como ordenação e paginação.
+   
+2. `dataTables.bootstrap4.min.js`: Integração do DataTables com o Bootstrap 4 para estilos adequados.
+
+#### Funções JavaScript Personalizadas:
+
+1. **Verificar Senhas**: Ao enviar o formulário de edição de usuário, esta função verifica se as senhas fornecidas coincidem antes de enviar o formulário.
+
+2. **Confirmar Exclusão**: Ao clicar no botão de exclusão ao lado de cada usuário, esta função exibe uma mensagem de confirmação antes de excluir o usuário.
+
+3. **Preencher Modal de Edição**: Ao clicar no botão de edição ao lado de cada usuário, esta função preenche o modal de edição com as informações do usuário selecionado.
+
+#### Modal de Edição:
+
+1. Permite editar o nome, matrícula e senha do usuário selecionado.
+
+2. Possui campos de senha e repetição de senha com validação para garantir que as senhas coincidam.
+
+3. Botões para fechar o modal e salvar as alterações realizadas.
+
+
+
+### `index.php`
+
+Esta página é a tela de login do sistema, onde os usuários podem inserir suas credenciais para acessar o sistema.
+
+#### Funcionalidades Principais:
+
+1. **Formulário de Login**: Permite que os usuários insiram sua matrícula e senha para acessar o sistema.
+
+2. **Exibição de Mensagens de Erro**: Exibe mensagens de erro caso ocorram problemas durante o processo de login.
+
+#### Estilos CSS Incorporados:
+
+1. `body`: Define o fundo da página como cinza claro.
+   
+2. `.container`: Centraliza o conteúdo da página verticalmente.
+   
+3. `.card`: Adiciona uma sombra à caixa do formulário de login.
+   
+4. `.card-header`: Define o estilo do cabeçalho da caixa do formulário.
+   
+5. `.form-group`: Define o espaçamento entre os campos do formulário.
+   
+6. `label`: Define o estilo das etiquetas dos campos do formulário.
+   
+7. `input.form-control`: Define o estilo dos campos de entrada do formulário.
+   
+8. `.btn-primary`: Define o estilo do botão de login.
+
+#### Scripts JavaScript do Bootstrap:
+
+1. `jquery-3.3.1.slim.min.js`: Fornece funcionalidades básicas do jQuery para manipulação do DOM.
+   
+2. `popper.min.js`: Biblioteca para manipulação de elementos popper.
+   
+3. `bootstrap.min.js`: Fornece funcionalidades avançadas do Bootstrap, como modais e dropdowns.
+
+
 ## Autor
 
 Este projeto foi desenvolvido por Gabriel Monteiro da Equipe de TI do hospital metre vitalino.
