@@ -4,11 +4,18 @@
 
 Este conjunto de arquivos PHP foi desenvolvido para fornecer uma interface de login e cadastro para um sistema web, com integração a um banco de dados MySQL para armazenar informações de usuários.
 
-## Funcionalidades Principais
+### Usuário Padrão
 
 1. **Login de Usuário**: Permite que usuários existentes acessem o sistema fornecendo sua matrícula e senha.
    
 2. **Cadastro de Usuário**: Permite que novos usuários se registrem no sistema fornecendo sua matrícula, senha, nome completo e aceitando os termos de uso do WiFi.
+
+### Admin
+
+1. **Login de Administrador**: Permite que administradores acessem o painel administrativo do sistema fornecendo suas credenciais.
+   
+2. **Gerenciamento de Usuários**: Permite que os administradores visualizem, adicionem, atualizem e removam usuários do sistema.
+
 
 ## Requisitos
 
@@ -20,7 +27,7 @@ Este conjunto de arquivos PHP foi desenvolvido para fornecer uma interface de lo
 
 1. **Configuração do Ambiente**: Certifique-se de ter um ambiente de desenvolvimento PHP configurado corretamente em sua máquina.
 
-2. **Configuração do Banco de Dados**: Configure um banco de dados MySQL e importe o esquema fornecido no arquivo `database.sql`.
+2. **Configuração do Banco de Dados**: Configure um banco de dados MySQL com o esquema na tabela fornecida.
 
 3. **Baixar Dependências**: Certifique-se de ter acesso à internet para baixar os arquivos de estilo Bootstrap e a biblioteca jQuery. Você pode acessar os links fornecidos no cabeçalho do arquivo HTML para garantir a disponibilidade desses recursos.
 
@@ -60,24 +67,12 @@ Este arquivo é a página inicial do sistema. Ele contém a interface de login e
 
 ### `Clogin.php`
 
-Este arquivo é responsável pelo processo de autenticação de usuários. Quando um usuário envia o formulário de login, este arquivo verifica as credenciais fornecidas (matrícula e senha) em relação aos dados armazenados no banco de dados. Se as credenciais forem válidas, o usuário é redirecionado para a página inicial do sistema. Caso contrário, uma mensagem de erro é exibida na página de login.
+Este arquivo é responsável pelo processo de autenticação de usuários. Quando um usuário envia o formulário de login, este arquivo verifica as credenciais fornecidas (matrícula e senha) em relação aos dados armazenados no banco de dados. Se as credenciais forem válidas, o usuário é autorizado a utilizar o WiFi. Caso contrário, uma mensagem de erro é exibida na página de login.
 
 ### `Cuser.php`
 
-Este arquivo é responsável pelo processo de cadastro de novos usuários. Quando um usuário envia o formulário de cadastro, este arquivo verifica se a matrícula fornecida já existe no banco de dados. Se a matrícula não existir, os dados do novo usuário (matrícula, senha e nome completo) são inseridos no banco de dados. Se a matrícula já existir, os dados do usuário são atualizados no banco de dados. Após o cadastro ou atualização bem-sucedidos, o usuário é redirecionado de volta para a página inicial do sistema com uma mensagem de sucesso.
-
-## Personalização
-
-Estes arquivos PHP podem ser personalizados de acordo com as necessidades do seu projeto. Você pode modificar o código para adicionar validações adicionais, integração com um banco de dados específico, entre outras funcionalidades.
-
-## Contribuição
-
-Contribuições são bem-vindas! Se você encontrar algum problema, tiver sugestões de melhorias ou quiser adicionar novos recursos, sinta-se à vontade para criar um problema ou enviar uma solicitação de recebimento (PR) neste repositório.
+Este arquivo é responsável pelo processo de cadastro de novos usuários. Quando um usuário envia o formulário de cadastro, este arquivo verifica se a matrícula fornecida já existe no banco de dados. Se a matrícula já existir, os dados do usuário são atualizados no banco de dados. Após o cadastro ou atualização bem-sucedidos, o usuário é redirecionado de volta para a página inicial do sistema com uma mensagem de sucesso.
 
 ## Autor
 
-Este arquivo foi desenvolvido por [Seu Nome]. Você pode entrar em contato comigo em [seuemail@example.com] para mais informações ou suporte.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença XYZ]. Consulte o arquivo LICENSE para obter mais informações.
+Este projeto foi desenvolvido por Gabriel Monteiro da Equipe de TI do hospital metre vitalino.
