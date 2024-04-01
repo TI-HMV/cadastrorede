@@ -19,7 +19,8 @@ if (isset($_GET['mensagem'])) {
     <title>Wifi</title>
     <!-- Inclua os arquivos do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
             margin: 0;
@@ -219,16 +220,17 @@ if (isset($_GET['mensagem'])) {
     <div class="login-wrap">
         <div class="login-html">
             <!-- Mensagem de atualização -->
-            <?php if (isset($mensagem)) : ?>
+            <?php if (isset($mensagem)): ?>
                 <div class="alert alert-success" role="alert">
                     <?php echo $mensagem; ?>
                 </div>
-            <?php elseif (isset($erro)) : ?>
+            <?php elseif (isset($erro)): ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $erro; ?>
                 </div>
             <?php endif; ?>
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Entrar</label>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                class="tab">Entrar</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Cadastrar</label>
             <div class="login-form">
                 <form class="sign-in-htm" action="Clogin.php" method="post">
@@ -259,7 +261,8 @@ if (isset($_GET['mensagem'])) {
                     </div>
                     <div class="group">
                         <label for="senha_repetida" class="label">Repita a senha</label>
-                        <input id="senha_repetida" name="senha_repetida" type="password" class="input" data-type="password" required>
+                        <input id="senha_repetida" name="senha_repetida" type="password" class="input"
+                            data-type="password" required>
                     </div>
                     <div class="group">
                         <label for="nome" class="label">Nome completo</label>
@@ -277,37 +280,59 @@ if (isset($_GET['mensagem'])) {
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Política de Uso do WiFi e Consentimento para Tratamento de Dados</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Política de Uso do WiFi e Consentimento para
+                        Tratamento de Dados</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body" id="termsBody">
                     <h4>Termos de Uso do WiFi e Consentimento para Tratamento de Dados</h4>
-                    <p>Ao conectar-se à rede WiFi do Hospital Mestre Vitalino, você concorda com os seguintes termos de uso e políticas de privacidade:</p>
+                    <p>Ao conectar-se à rede WiFi do Hospital Mestre Vitalino, você concorda com os seguintes termos de
+                        uso e políticas de privacidade:</p>
                     <h5>Coleta e Tratamento de Dados Pessoais:</h5>
-                    <p>Para utilizar nossa rede WiFi, precisamos coletar e processar alguns dados pessoais, incluindo nome, dispositivo conectado e atividades de navegação. Essas informações serão tratadas de acordo com as disposições da Lei Geral de Proteção de Dados (LGPD) e utilizadas apenas para fins internos da empresa, incluindo a melhoria da qualidade da rede e a segurança da informação.</p>
+                    <p>Para utilizar nossa rede WiFi, precisamos coletar e processar alguns dados pessoais, incluindo
+                        nome, dispositivo conectado e atividades de navegação. Essas informações serão tratadas de
+                        acordo com as disposições da Lei Geral de Proteção de Dados (LGPD) e utilizadas apenas para fins
+                        internos da empresa, incluindo a melhoria da qualidade da rede e a segurança da informação.</p>
                     <h5>Finalidade do Tratamento:</h5>
-                    <p>Os dados coletados serão utilizados exclusivamente para garantir a operação adequada da rede WiFi, prevenir atividades fraudulentas, monitorar o desempenho da rede e garantir a segurança cibernética da empresa. Não serão compartilhados com terceiros sem o seu consentimento expresso, exceto quando exigido por lei.</p>
+                    <p>Os dados coletados serão utilizados exclusivamente para garantir a operação adequada da rede
+                        WiFi, prevenir atividades fraudulentas, monitorar o desempenho da rede e garantir a segurança
+                        cibernética da empresa. Não serão compartilhados com terceiros sem o seu consentimento expresso,
+                        exceto quando exigido por lei.</p>
                     <h5>Consentimento do Titular:</h5>
-                    <p>Ao aceitar estes termos de uso, você consente explicitamente com o tratamento de seus dados pessoais de acordo com as condições estabelecidas nesta política.</p>
+                    <p>Ao aceitar estes termos de uso, você consente explicitamente com o tratamento de seus dados
+                        pessoais de acordo com as condições estabelecidas nesta política.</p>
                     <h5>Direitos do Titular dos Dados:</h5>
-                    <p>Você tem o direito de acessar, corrigir, atualizar ou solicitar a exclusão de seus dados pessoais a qualquer momento, entrando em contato com setor da TI.</p>
+                    <p>Você tem o direito de acessar, corrigir, atualizar ou solicitar a exclusão de seus dados pessoais
+                        a qualquer momento, entrando em contato com setor da TI.</p>
                     <h5>Segurança da Informação:</h5>
-                    <p>Comprometemo-nos a adotar medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não autorizado, uso indevido ou divulgação.</p>
+                    <p>Comprometemo-nos a adotar medidas técnicas e organizacionais adequadas para proteger seus dados
+                        contra acesso não autorizado, uso indevido ou divulgação.</p>
                     <h5>Importância da Confidencialidade e Não Compartilhamento:</h5>
-                    <p>É fundamental que você mantenha a confidencialidade de suas credenciais de acesso à rede WiFi e não as compartilhe com terceiros. O compartilhamento de suas informações de login pode resultar em acesso não autorizado à rede, comprometendo a segurança de seus dados e dos dados da empresa.</p>
+                    <p>É fundamental que você mantenha a confidencialidade de suas credenciais de acesso à rede WiFi e
+                        não as compartilhe com terceiros. O compartilhamento de suas informações de login pode resultar
+                        em acesso não autorizado à rede, comprometendo a segurança de seus dados e dos dados da empresa.
+                    </p>
                     <h5>Sobrecarga de Rede:</h5>
-                    <p>O compartilhamento indevido de suas credenciais de acesso à rede WiFi pode resultar em sobrecarga de rede e instabilidade no serviço. Isso pode afetar negativamente todos os usuários conectados à rede, causando lentidão na conexão e interrupções no serviço. Portanto, é importante não compartilhar suas credenciais com terceiros.</p>
-                    <p>Ao clicar em "Aceitar", você reconhece que leu e compreendeu esta política de uso do WiFi e concorda com o tratamento de seus dados pessoais conforme descrito acima.</p>
+                    <p>O compartilhamento indevido de suas credenciais de acesso à rede WiFi pode resultar em sobrecarga
+                        de rede e instabilidade no serviço. Isso pode afetar negativamente todos os usuários conectados
+                        à rede, causando lentidão na conexão e interrupções no serviço. Portanto, é importante não
+                        compartilhar suas credenciais com terceiros.</p>
+                    <p>Ao clicar em "Aceitar", você reconhece que leu e compreendeu esta política de uso do WiFi e
+                        concorda com o tratamento de seus dados pessoais conforme descrito acima.</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="position: relative;">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="acceptButton" disabled onclick="aceitarTermos()">Aceitar</button>
+                    <button type="button" class="btn btn-primary" id="outroBotao" onclick="funcaoOutroBotao()"
+                        disabled>Aceitar</button>
+                    <button type="button" class="btn btn-primary" id="acceptButton"
+                        style="position: absolute; right: 14px; z-index: -1;" onclick="aceitarTermos()">Aceitar</button>
                 </div>
             </div>
         </div>
@@ -315,8 +340,26 @@ if (isset($_GET['mensagem'])) {
 </body>
 
 </html>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+
+    $(document).ready(function () {
+        // Função para verificar se o usuário chegou ao final do modal
+        $('#termsModal .modal-body').scroll(function () {
+            var $modalBody = $('#termsModal .modal-body');
+            var $acceptButton = $('#acceptButton');
+
+            // Verifica se o scroll chegou ao final do modal
+            if ($modalBody.scrollTop() + $modalBody.innerHeight() >= $modalBody[0].scrollHeight) {
+                // Se chegou ao final, altera o índice z do botão "Aceitar" para 1
+                $acceptButton.css('z-index', '1');
+            } else {
+                // Caso contrário, mantém o índice z como -1
+                $acceptButton.css('z-index', '-1');
+            }
+        });
+    });
     // Função para abrir o modal e verificar a posição do scroll
     function abrirModal() {
         // Abre o modal
@@ -325,14 +368,6 @@ if (isset($_GET['mensagem'])) {
         // Verifica se o usuário já está no final do conteúdo do modal ao abri-lo
         var $modalBody = $('#termsModal .modal-body');
         var $acceptButton = $('#acceptButton');
-
-        if ($modalBody.scrollTop() + $modalBody.innerHeight() >= $modalBody[0].scrollHeight) {
-            // Habilita o botão "Aceitar" se o usuário estiver no final do conteúdo
-            $acceptButton.prop('disabled', false);
-        } else {
-            // Desabilita o botão "Aceitar" se o usuário não estiver no final do conteúdo
-            $acceptButton.prop('disabled', true);
-        }
 
         return false;
     }
@@ -351,5 +386,3 @@ if (isset($_GET['mensagem'])) {
         window.location.href = url;
     }
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
