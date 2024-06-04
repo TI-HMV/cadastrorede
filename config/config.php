@@ -2,7 +2,7 @@
 // Configurações do banco de dados
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "tihmvtri";
 $dbname = "wifi";
 
 // Implementado para tratar de erro de conexão quando mode está configurado para MYSQLI_REPORT_STRICT
