@@ -380,7 +380,7 @@ if (isset($_GET['mensagem'])) {
         var senha = document.getElementById('senha').value;
 
         // Construir a URL com os valores
-        var url = "cuser.php?nome=" + encodeURIComponent(nome) + "&matricula=" + encodeURIComponent(matricula) + "&senha=" + encodeURIComponent(senha);
+        var url = "Cuser.php?nome=" + encodeURIComponent(nome) + "&matricula=" + encodeURIComponent(matricula) + "&senha=" + encodeURIComponent(senha);
 
         // Redirecionar para a URL com os valores
         window.location.href = url;
